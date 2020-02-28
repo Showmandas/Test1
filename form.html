@@ -1,0 +1,120 @@
+<html>
+<head>
+    <style>
+        body{background-image: url('s2.jpg');background-size: cover;background-attachment: fixed;padding: 0;margin: 0;}
+        #form{width: 40%;min-height:400px;margin: 10% auto 0 500px;background-color: rgba(0,0,0,0.5);text-align: center;}
+        #form-fill input{text-align:;border: 2px solid black;margin:0 auto;padding: 3px;}
+        #form-fill{margin: 50px 100px 0px 140px;padding-bottom: 0%; width: 0px;border-radius: 6px;text-align: ;align-content:;font-size: 15px;color:darkred;}
+        #Submit{padding: 15px;font-size: 20px;background-color: rgba(55,255,0,0.5);color: black;border-radius: 12px;}
+        
+        
+    </style>
+    </head>
+    <body>
+    <div id="cart">
+        <div id="form">
+            <h1 style="color: floralwhite;">Sign Up Form<h1>
+            <div id="form-fill">
+                <form  onsubmit="return clicked()">
+        <label>NAME</label>
+            <input type="text" size="35" id="user" autocomplete="off">
+                <span id="u"></span>
+            </div>
+                        <div id="form-fill">
+
+        <label>ADDRESS</label>
+            <input type="text" size="50" id="add" autocomplete="off">
+                                            <span id="a"></span>
+
+                                        </div>
+
+                        <div id="form-fill">
+
+        <label>EMAIL ID</label>
+            <input type="text" size="40" id="email" autocomplete="off">
+                                            <span id="e"></span>
+
+                         </div>
+            
+            <div id="form-fill">
+        <label>PASSWORD</label>
+            <input type="password" size="30" id="pass" autocomplete="off">
+                                <span id="p"></span>
+
+                             </div>
+
+    
+                                    <div id="form-fill">
+
+            <label>CREDIT/DEBIT CARD NO</label>
+                        <input type="text" size="30" id="card" autocomplete="off">
+                                                        <span id="c"></span>
+
+                                                    </div><br>
+            <input type="submit" value="submit" id="Submit">
+            </form>
+            </div>
+
+        </div>
+        <script>
+        function clicked(){
+            var user = document.getElementById("user").value;
+            var address = document.getElementById("add").value; 
+            var email = document.getElementById("email").value; 
+            var pass = document.getElementById("pass").value; 
+        var card = document.getElementById("card").value;
+            
+            if(user == ""){
+                document.getElementById("u").innerHTML = "**Fill the username field";
+                return false;
+                }
+            if((user.length <= 3) || (user.length > 20)){
+                document.getElementById("u").innerHTML = "**Character must be between 3 to 20!";
+                return false;
+            }
+            
+            if(!isNaN(user)){
+                document.getElementById("u").innerHTML = "**Numbers are not allowed!";
+                return false;
+            }
+            if(address == ""){
+                document.getElementById("a").innerHTML = "**Fill the addess field!";
+                return false;
+            }
+            
+            
+            if(email == ""){
+                document.getElementById("e").innerHTML = "**fill the Email field";
+                return false;
+                }
+             if(email.indexOf('@') <= 0){
+                document.getElementById("e").innerHTML = "**Invalid Email";
+                return false;
+                }
+            
+            if(pass == ""){
+                document.getElementById("p").innerHTML = "**fill the Password field";
+                return false;
+            }
+            
+            if((pass.length <= 5) || (pass.length > 20)){
+                document.getElementById("p").innerHTML = "**password must be 5 to 20 character!";
+                return false;
+            }
+            
+            if(card == ""){
+                document.getElementById("c").innerHTML = "**fill the cardNum field";
+                return false;
+            }
+            if(isNaN(card)){
+                document.getElementById("c").innerHTML = "**Only digits allowed!";
+                return false;
+            }
+            
+            
+            
+                
+}
+        </script>
+             </body>
+</html>
